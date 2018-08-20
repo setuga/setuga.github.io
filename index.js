@@ -36,6 +36,7 @@ const app = new Vue({
         },
         setMap : function (map)
         {
+            this.city = "Random City";
             this.map = map.toUpperCase();
         }
     }
