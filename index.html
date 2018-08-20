@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Random City in PUBG</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="app">
+    <p id="map"><h1>{{map}}</h1></p>
+    <p id="city"><h2>{{city}}</h2></p>
+    <p><button @click="randomCity">Random City!</button></p>
+    <p>
+        <button @click="setMap('erangel')">Erangel</button>
+        <button @click="setMap('miramar')">Miramar</button>
+        <button @click="setMap('sanhok')">Sanhok</button>
+    </p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
