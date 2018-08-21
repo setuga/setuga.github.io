@@ -44,7 +44,8 @@ const app = new Vue({
                 this.randomCity();
                 if (this.count > 10)
                 {
-                    clearInterval(this.timeObj)
+                    clearInterval(this.timeObj);
+                    this.count = 0;
                 }
             }, 100);
         },
