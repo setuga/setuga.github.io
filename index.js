@@ -18,6 +18,7 @@ const app = new Vue({
         map : 'ERANGEL',
         city : "Random City",
         timeObj : null,
+        timerOn: false,
         count : 0
     },
     methods: {
@@ -38,16 +39,22 @@ const app = new Vue({
         },
         random : function()
         {
-            this.timeObj =  setInterval(() =>
+            if (this.timerOn === false)
             {
-                this.count++;
-                this.randomCity();
-                if (this.count > 10)
+                this.timeObj =  setInterval(() =>
                 {
-                    clearInterval(this.timeObj);
-                    this.count = 0;
-                }
-            }, 100);
+                    this.timerOn = true;
+                    this.count++;
+                    console.log(this.count);
+                    this.randomCity();
+                    if (this.count > 10)
+                    {
+                        clearInterval(this.timeObj);
+                        this.timerOn = false;
+                        this.count = 0;
+                    }
+                }, 100);
+            }
         },
         setMap : function (map)
         {
