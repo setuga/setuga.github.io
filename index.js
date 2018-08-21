@@ -16,7 +16,9 @@ const app = new Vue({
                 "Na Kham", "Sahmee", "Ban Tai", "Docks"],
         },
         map : 'ERANGEL',
-        city : "Random City"
+        city : "Random City",
+        timeObj : null,
+        count : 0
     },
     methods: {
         randomCity: function ()
@@ -33,6 +35,18 @@ const app = new Vue({
             {
                 this.city = this.maps.sanhok[Math.floor(Math.random() * this.maps.sanhok.length)]
             }
+        },
+        random : function()
+        {
+            this.timeObj =  setInterval(() =>
+            {
+                this.count++;
+                this.randomCity();
+                if (this.count > 10)
+                {
+                    clearInterval(this.timeObj)
+                }
+            }, 100);
         },
         setMap : function (map)
         {
